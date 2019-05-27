@@ -24,6 +24,12 @@ const store = new Vuex.Store({
     },
     CHANGE_ADD_ROUTES(state, addRoutes){
       state.addRoutes = addRoutes
+    },
+    CHANGE_NAME(state,name){
+      state.userInfo.name = name
+    },
+    CHANGE_LEVEL(state,level){
+      state.userInfo.level = level
     }
   },
   actions: {

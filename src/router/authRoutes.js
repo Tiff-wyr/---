@@ -139,6 +139,5 @@ const repairRoutes = [
 ]
 
 export default {
-  adminRoutes,
   repairRoutes
 }

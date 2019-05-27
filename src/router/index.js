@@ -27,7 +27,7 @@ import Layout from '../views/layout/Layout'
 
 export const constantRouterMap = [
   {path: '/',component: Layout,},
-  {path: '/login', name: 'login', component: () => import('@/views/login/index'), hidden: true},
+  // {path: '/login', name: 'login', component: () => import('@/views/login/index'), hidden: true},
    {path: '/404', component: () => import('@/views/404'), hidden: true},
    // {path: '/forgetPass', component: () => import('@/views/forgetPass'), hidden: true},
    {path: '/dashboard', name: 'dashboard', component: () => import('@/views/dashboard/index'), hidden: true},
@@ -42,10 +42,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   const level = store.state.userInfo.level
   let routers = []
-  if(level == -1){ // 管理员
-    router.addRoutes(authRoutes.adminRoutes)
-    routers = authRoutes.adminRoutes
-  } else if(level == 0){
+  if(level == 0){
     router.addRoutes(authRoutes.repairRoutes)
     routers = authRoutes.repairRoutes
   }

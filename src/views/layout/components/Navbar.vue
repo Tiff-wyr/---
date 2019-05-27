@@ -2,6 +2,7 @@
   <el-menu class="navbar" mode="horizontal" >
     <hamburger :toggle-click="toggleSideBar" :is-active="true" class="hamburger-container"/>
     <breadcrumb />
+    <div>{{$store.state.userInfo.name}}</div>
     <img src="/static/image/logout.png" alt="" class="logout-img" @click="logout">
   </el-menu>
 </template>
