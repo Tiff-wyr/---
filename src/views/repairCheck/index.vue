@@ -33,12 +33,12 @@
         highlight-current-row>
         <el-table-column label="报修类型" align="center">
           <template slot-scope="scope">
-            {{ scope.row.type.name}}
+            {{ scope.row.type.name ? scope.row.type.name : '无数据'}}
           </template>
         </el-table-column>
         <el-table-column label="报修人" align="center">
           <template slot-scope="scope">
-            {{ scope.row.user.name}}
+            {{ scope.row.user.name ? scope.row.user.name : '无数据'}}
           </template>
         </el-table-column>
         <el-table-column label="报修时间" align="center" prop="createTime">
@@ -91,13 +91,13 @@
       <el-dialog :visible.sync="dialogVisible" width="40%">
         <el-form ref="memberForm" :model="memberForm" label-position="left" label-width="150px">
           <el-form-item label="报修人姓名">
-            <span>{{memberForm.user.name}}</span>
+            <span>{{memberForm.user.name ? memberForm.user.name : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="报修人电话">
             <span>{{memberForm.user.phone}}</span>
           </el-form-item>
           <el-form-item label="报修类型">
-            <span>{{memberForm.type.name}}</span>
+            <span>{{memberForm.type.name ? memberForm.type.name : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="报修图片">
             <img :src="item" class="pic" v-for="(item,index) in  memberForm.images.split(',')" :key="index" @click="imgMax">

@@ -1,26 +1,6 @@
 import Layout from '@/views/layout/Layout'
 
-const adminRoutes = [
-  {
-    path: '/',
-    component: Layout,
-    redirect: '/admin',
-    name: 'admin',
-    children: [
-      {
-        name: 'admin',
-        path: '/admin',
-        meta: {
-          title: '管理员管理',
-          icon: 'user'
-        },
-        component: () => import('@/views/adminUser')
-      },
 
-    ]
-  },
-  {path: '*', redirect: '/404', hidden: true}
-]
 
 const repairRoutes = [
   {

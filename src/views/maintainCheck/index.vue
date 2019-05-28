@@ -32,17 +32,17 @@
         highlight-current-row>
         <el-table-column label="维修单号" align="center">
           <template slot-scope="scope">
-            {{ scope.row.code}}
+            {{ scope.row.code ? scope.row.code : '无数据'}}
           </template>
         </el-table-column>
         <el-table-column label="报修人" align="center">
           <template slot-scope="scope">
-            {{ scope.row.repairsId.user.name}}
+            {{ scope.row.repairsId.user.name ? scope.row.repairsId.user.name : '无数据'}}
           </template>
         </el-table-column>
         <el-table-column label="维修员" align="center">
           <template slot-scope="scope">
-            {{ scope.row.user.name}}
+            {{ scope.row.user.name ? scope.row.user.name : '无数据'}}
           </template>
         </el-table-column>
         <el-table-column label="报修时间" align="center">
@@ -93,13 +93,13 @@
       <el-dialog :visible.sync="dialogVisible" width="40%">
         <el-form ref="memberForm" :model="memberForm" label-position="left" label-width="150px">
           <el-form-item label="报修人姓名">
-            <span>{{memberForm.repairsId.user.name}}</span>
+            <span>{{memberForm.repairsId.user.name ? memberForm.repairsId.user.name : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="报修人电话">
-            <span>{{memberForm.repairsId.user.phone}}</span>
+            <span>{{memberForm.repairsId.user.phone ? memberForm.repairsId.user.phone : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="报修类型">
-            <span>{{memberForm.repairsId.type.name}}</span>
+            <span>{{memberForm.repairsId.type.name ? memberForm.repairsId.type.name  : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="报修图片">
             <img :src="item" class="pic" v-for="(item,index) in  memberForm.repairsId.images.split(',')" :key="index">
@@ -114,10 +114,10 @@
             <span>{{memberForm.repairsId.rejectMsg}}</span>
           </el-form-item>
           <el-form-item label="维修员姓名">
-            <span>{{memberForm.user.name}}</span>
+            <span>{{memberForm.user.name ? memberForm.user.name : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="维修员电话">
-            <span>{{memberForm.user.phone}}</span>
+            <span>{{memberForm.user.phone ? memberForm.user.phone : '无数据'}}</span>
           </el-form-item>
           <el-form-item label="维修图片">
             <img :src="item" class="pic" v-for="(item,index) in  memberForm.images.split(',')" :key="index" @click="imgMax">

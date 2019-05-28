@@ -39,7 +39,7 @@ export default {
       this.$router.options.routes = constantRouterMap
       Logout().then(res=>{
         console.log(res)
-        this.$router.push('/login')
+        window.close()
       })
 
     }
